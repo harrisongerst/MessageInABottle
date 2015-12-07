@@ -19,10 +19,14 @@ h1 {
 }
 
 .mess {
-    width: 300px; 
-    height: 100px;
-    border: 20px solid #ffffff;
-    border-radius: 30px;
+    width:300px;
+    height:100px;
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -150px;
+    border: 1px solid grey;
     padding: 5px;
 }
 
@@ -32,4 +36,17 @@ h1 {
     width: 6em;
 }
 
-
+.submit {
+    width: 100px;
+    height: 25px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -50px;
+    border: 1px solid darkgreen;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #d4e0d4;
+    color: #359b2a;
+}
