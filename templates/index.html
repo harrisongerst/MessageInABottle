@@ -1,0 +1,46 @@
+<!DOCTYPE>
+<html>
+    <head><link rel="stylesheet" type="text/css" href= "{{url_for ('static', filename = 'stylesheet.css')}}">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-git2.min.js"></script>
+    </head>
+	<title>CooCooForCoCo</title>
+    <body>
+    <div class="containter-fluid">
+        <div class=''
+        <div class="page-header">
+        <h1>Message in a Bottle</h1>
+        </div>
+        
+            <p> Send a message.<br>
+                Get a random message in return.
+            </p>
+       
+        <div id=message>
+               <textarea name="mess" class="mess">Enter here...</textarea>
+            <button onclick="postmess()" class="submit">SUBMIT</button>
+            
+        </div>
+        
+        <div>
+            <p class="messPara">TEST</p>
+        </div>
+        </div>
+    <script>
+    function postmess() {
+        var message=document.getElementsByClassName("mess")[0].value
+        console.log(message)
+        console.log($.post('http://localhost:5000/post/' + message))
+        getmess()
+    }
+    function getmess() {
+        $.get('http://localhost:5000/message', function(data){
+            document.getElementsByClassName("messPara")[0].value = data['text']
+        })
+    }
+    </script>
+    </body>
+</html>
